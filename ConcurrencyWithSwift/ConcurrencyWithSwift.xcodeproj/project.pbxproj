@@ -14,6 +14,9 @@
 		11A69E63292C17F9007A1624 /* DoCatchExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E62292C17F9007A1624 /* DoCatchExample.swift */; };
 		11A69E65292C2485007A1624 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E64292C2485007A1624 /* DataManager.swift */; };
 		11A69E67292C24B0007A1624 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E66292C24B0007A1624 /* ViewModel.swift */; };
+		11A69E6A292C2555007A1624 /* DownloadImagesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E69292C2555007A1624 /* DownloadImagesExample.swift */; };
+		11A69E6C292C329B007A1624 /* DataManagerAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E6B292C329B007A1624 /* DataManagerAsync.swift */; };
+		11A69E6E292C3310007A1624 /* AsyncAwaitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E6D292C3310007A1624 /* AsyncAwaitViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		11A69E62292C17F9007A1624 /* DoCatchExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchExample.swift; sourceTree = "<group>"; };
 		11A69E64292C2485007A1624 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		11A69E66292C24B0007A1624 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		11A69E69292C2555007A1624 /* DownloadImagesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImagesExample.swift; sourceTree = "<group>"; };
+		11A69E6B292C329B007A1624 /* DataManagerAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerAsync.swift; sourceTree = "<group>"; };
+		11A69E6D292C3310007A1624 /* AsyncAwaitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,7 @@
 		11A69E52292C174F007A1624 /* ConcurrencyWithSwift */ = {
 			isa = PBXGroup;
 			children = (
+				11A69E68292C2532007A1624 /* EscapingAndCombine */,
 				11A69E61292C17E7007A1624 /* DoCatch */,
 				11A69E53292C174F007A1624 /* ConcurrencyWithSwiftApp.swift */,
 				11A69E55292C174F007A1624 /* ContentView.swift */,
@@ -82,6 +89,16 @@
 				11A69E66292C24B0007A1624 /* ViewModel.swift */,
 			);
 			path = DoCatch;
+			sourceTree = "<group>";
+		};
+		11A69E68292C2532007A1624 /* EscapingAndCombine */ = {
+			isa = PBXGroup;
+			children = (
+				11A69E69292C2555007A1624 /* DownloadImagesExample.swift */,
+				11A69E6B292C329B007A1624 /* DataManagerAsync.swift */,
+				11A69E6D292C3310007A1624 /* AsyncAwaitViewModel.swift */,
+			);
+			path = EscapingAndCombine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +172,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A69E67292C24B0007A1624 /* ViewModel.swift in Sources */,
+				11A69E6C292C329B007A1624 /* DataManagerAsync.swift in Sources */,
 				11A69E63292C17F9007A1624 /* DoCatchExample.swift in Sources */,
+				11A69E6A292C2555007A1624 /* DownloadImagesExample.swift in Sources */,
 				11A69E65292C2485007A1624 /* DataManager.swift in Sources */,
 				11A69E56292C174F007A1624 /* ContentView.swift in Sources */,
+				11A69E6E292C3310007A1624 /* AsyncAwaitViewModel.swift in Sources */,
 				11A69E54292C174F007A1624 /* ConcurrencyWithSwiftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
