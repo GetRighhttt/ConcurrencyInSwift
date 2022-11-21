@@ -12,6 +12,8 @@
 		11A69E58292C1751007A1624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A69E57292C1751007A1624 /* Assets.xcassets */; };
 		11A69E5B292C1751007A1624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A69E5A292C1751007A1624 /* Preview Assets.xcassets */; };
 		11A69E63292C17F9007A1624 /* DoCatchExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E62292C17F9007A1624 /* DoCatchExample.swift */; };
+		11A69E65292C2485007A1624 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E64292C2485007A1624 /* DataManager.swift */; };
+		11A69E67292C24B0007A1624 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E66292C24B0007A1624 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		11A69E57292C1751007A1624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A69E5A292C1751007A1624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		11A69E62292C17F9007A1624 /* DoCatchExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchExample.swift; sourceTree = "<group>"; };
+		11A69E64292C2485007A1624 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		11A69E66292C24B0007A1624 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				11A69E62292C17F9007A1624 /* DoCatchExample.swift */,
+				11A69E64292C2485007A1624 /* DataManager.swift */,
+				11A69E66292C24B0007A1624 /* ViewModel.swift */,
 			);
 			path = DoCatch;
 			sourceTree = "<group>";
@@ -148,7 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A69E67292C24B0007A1624 /* ViewModel.swift in Sources */,
 				11A69E63292C17F9007A1624 /* DoCatchExample.swift in Sources */,
+				11A69E65292C2485007A1624 /* DataManager.swift in Sources */,
 				11A69E56292C174F007A1624 /* ContentView.swift in Sources */,
 				11A69E54292C174F007A1624 /* ConcurrencyWithSwiftApp.swift in Sources */,
 			);
