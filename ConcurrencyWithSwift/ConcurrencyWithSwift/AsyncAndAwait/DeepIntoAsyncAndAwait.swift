@@ -54,6 +54,8 @@ class AsyncAwaitViewModelDeepDive : ObservableObject {
      So it's best practice to switch back onto main actor or whatever actor afterwards.
      
      Best practice to specify the thread.
+     
+     Code executes in order even though it is asynchronous.
      */
     func addNewWord() async {
         let word1 = "Word1: \(Thread.current)"
