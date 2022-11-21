@@ -10,35 +10,65 @@
  */
 import SwiftUI
 
-class AsyncDataManagerDeepDive {
-    
-}
-
 class AsyncAwaitViewModelDeepDive : ObservableObject {
     
     // declare empty array for views
     @Published var dataArray: [String] = []
     
-    func addWord1() {
-        self.dataArray.append("New Word 1! : \(Thread.current)")
+    /**
+     without async and await:
+     
+     
+     func addWord1() {
+         self.dataArray.append("New Word 1! : \(Thread.current)")
+     }
+     
+     func addWord2() {
+         
+         // main thread
+         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+             self.dataArray.append("New Word 1! : \(Thread.current)")
+         }
+         
+         // global thread
+         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+             let word = "Word 2: \(Thread.current)"
+             DispatchQueue.main.async{ // back to main thread
+                 self.dataArray.append(word)
+                 
+                 let word2 = "Word3: \(Thread.current)"
+                 self.dataArray.append(word2)
+             }
+         }
+     }
+     */
+    
+    
+    /**
+     Here is async and await:
+     
+     Sometimes async and await will run on a background thread. But it's not always.
+     
+     await = suspension point in the task.
+     
+     So it's best practice to switch back onto main actor or whatever actor afterwards.
+     
+     Best practice to specify the thread.
+     */
+    func addNewWord() async {
+        let word1 = "Word1: \(Thread.current)"
+        self.dataArray.append(word1)
+        
+        // we can use sleep to add a delay to async and await.
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        
+        // go back to main thread
+        await MainActor.run {
+            let word2 = "Word2: \(Thread.current)"
+            self.dataArray.append(word2)
+        }
     }
     
-    func addWord2() {
-        
-        // main thread
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.dataArray.append("New Word 1! : \(Thread.current)")
-        }
-        
-        // global thread
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-            let word = "Word 2: \(Thread.current)"
-            // back to main thread
-            DispatchQueue.main.async{
-                self.dataArray.append(word)
-            }
-        }
-    }
 }
 
 struct DeepIntoAsyncAndAwait: View {
@@ -53,8 +83,9 @@ struct DeepIntoAsyncAndAwait: View {
                         Text(data)
                     }
                 }.onAppear {
-                    viewModel.addWord1()
-                    viewModel.addWord2()
+                    Task {
+                        await viewModel.addNewWord()
+                    }
                 }
                 .listStyle(.plain)
                 .navigationTitle("Concurrency")
