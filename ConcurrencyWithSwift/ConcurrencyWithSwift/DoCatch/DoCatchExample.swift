@@ -92,13 +92,12 @@ class DoCatchViewModel : ObservableObject {
          here is where we show the do-catch and optional try. With an optional try, if it doesn't
          work, the next try will still work normally. This only happens with an optional try.
          */
-        
-        let newTitle = try? dataManager.getTitle3()
-        if let newTitle = newTitle {
-            self.text = newTitle
-        }
-        
         do {
+            
+            let newTitle = try? dataManager.getTitle3()
+            if let newTitle = newTitle {
+                self.text = newTitle
+            }
             
             let lastTitle = try dataManager.getTitle4()
             self.text = lastTitle
