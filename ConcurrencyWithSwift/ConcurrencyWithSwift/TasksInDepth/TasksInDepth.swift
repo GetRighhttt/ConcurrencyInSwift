@@ -45,6 +45,11 @@ class TasksViewModel : ObservableObject {
 
 /**
  Priority is very dependent on what it is you are trying to accomplish.
+ 
+ We can also cancel tasks with .cancel() method. However, SwiftUI automatically cancels
+ the task if the view disappears before the action completes.
+ 
+ We can also call task using .task {} instead of Task.
  */
 struct TasksInDepth: View {
     
