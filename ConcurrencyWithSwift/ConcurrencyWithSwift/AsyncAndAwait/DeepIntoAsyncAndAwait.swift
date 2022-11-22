@@ -28,6 +28,7 @@ struct DeepIntoAsyncAndAwait: View {
                 }.onAppear {
                     Task {
                         await viewModel.addNewWord()
+                        await viewModel.changeThis()
                     }
                 }
                 .listStyle(.plain)

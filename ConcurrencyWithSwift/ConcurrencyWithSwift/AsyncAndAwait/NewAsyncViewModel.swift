@@ -18,26 +18,26 @@ class AsyncAwaitViewModelDeepDive : ObservableObject {
      
      
      func addWord1() {
-         self.dataArray.append("New Word 1! : \(Thread.current)")
+     self.dataArray.append("New Word 1! : \(Thread.current)")
      }
      
      func addWord2() {
-         
-         // main thread
-         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-             self.dataArray.append("New Word 1! : \(Thread.current)")
-         }
-         
-         // global thread
-         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-             let word = "Word 2: \(Thread.current)"
-             DispatchQueue.main.async{ // back to main thread
-                 self.dataArray.append(word)
-                 
-                 let word2 = "Word3: \(Thread.current)"
-                 self.dataArray.append(word2)
-             }
-         }
+     
+     // main thread
+     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+     self.dataArray.append("New Word 1! : \(Thread.current)")
+     }
+     
+     // global thread
+     DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+     let word = "Word 2: \(Thread.current)"
+     DispatchQueue.main.async{ // back to main thread
+     self.dataArray.append(word)
+     
+     let word2 = "Word3: \(Thread.current)"
+     self.dataArray.append(word2)
+     }
+     }
      }
      */
     
@@ -63,10 +63,26 @@ class AsyncAwaitViewModelDeepDive : ObservableObject {
         try? await Task.sleep(nanoseconds: 2_000_000_000)
         
         // go back to main thread
+        let word2 = "Word2: \(Thread.current)"
         await MainActor.run {
-            let word2 = "Word2: \(Thread.current)"
             self.dataArray.append(word2)
+            
+            let word3 = "Word3: \(Thread.current)"
+            self.dataArray.append(word3)
         }
     }
     
+    func changeThis() async {
+        print("This thread finishes last!")
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        
+        let word4 = "Word4: \(Thread.current)"
+        await MainActor.run {
+            self.dataArray.append(word4)
+            
+            let word5 = "Word5: \(Thread.current)"
+            self.dataArray.append(word5)
+        }
+        
+    }
 }
