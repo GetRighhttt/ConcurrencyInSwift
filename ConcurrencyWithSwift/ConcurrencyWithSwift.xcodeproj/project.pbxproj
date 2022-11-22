@@ -19,6 +19,7 @@
 		11A69E6E292C3310007A1624 /* AsyncAwaitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E6D292C3310007A1624 /* AsyncAwaitViewModel.swift */; };
 		11A69E71292C3528007A1624 /* DeepIntoAsyncAndAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E70292C3528007A1624 /* DeepIntoAsyncAndAwait.swift */; };
 		11A69E73292C4243007A1624 /* NewAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E72292C4243007A1624 /* NewAsyncViewModel.swift */; };
+		11A69E76292D33E7007A1624 /* TasksInDepth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A69E75292D33E7007A1624 /* TasksInDepth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		11A69E6D292C3310007A1624 /* AsyncAwaitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitViewModel.swift; sourceTree = "<group>"; };
 		11A69E70292C3528007A1624 /* DeepIntoAsyncAndAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepIntoAsyncAndAwait.swift; sourceTree = "<group>"; };
 		11A69E72292C4243007A1624 /* NewAsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAsyncViewModel.swift; sourceTree = "<group>"; };
+		11A69E75292D33E7007A1624 /* TasksInDepth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInDepth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		11A69E52292C174F007A1624 /* ConcurrencyWithSwift */ = {
 			isa = PBXGroup;
 			children = (
+				11A69E74292D33D4007A1624 /* TasksInDepth */,
 				11A69E6F292C3511007A1624 /* AsyncAndAwait */,
 				11A69E68292C2532007A1624 /* EscapingAndCombine */,
 				11A69E61292C17E7007A1624 /* DoCatch */,
@@ -113,6 +116,14 @@
 				11A69E72292C4243007A1624 /* NewAsyncViewModel.swift */,
 			);
 			path = AsyncAndAwait;
+			sourceTree = "<group>";
+		};
+		11A69E74292D33D4007A1624 /* TasksInDepth */ = {
+			isa = PBXGroup;
+			children = (
+				11A69E75292D33E7007A1624 /* TasksInDepth.swift */,
+			);
+			path = TasksInDepth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 				11A69E56292C174F007A1624 /* ContentView.swift in Sources */,
 				11A69E6E292C3310007A1624 /* AsyncAwaitViewModel.swift in Sources */,
 				11A69E54292C174F007A1624 /* ConcurrencyWithSwiftApp.swift in Sources */,
+				11A69E76292D33E7007A1624 /* TasksInDepth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
