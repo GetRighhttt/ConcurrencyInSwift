@@ -26,6 +26,10 @@ class TasksViewModel : ObservableObject {
         } catch {
             print(error.localizedDescription)
         }
+        
+        /**
+         try Task.checkCancellation() to check for cancellation on certain tasks when the task is long.
+         */
     }
     
     func fetchImage2() async {
@@ -47,7 +51,8 @@ class TasksViewModel : ObservableObject {
  Priority is very dependent on what it is you are trying to accomplish.
  
  We can also cancel tasks with .cancel() method. However, SwiftUI automatically cancels
- the task if the view disappears before the action completes.
+ the task if the view disappears before the action completes. You might have to check for cancellation
+ when you have a long task.
  
  We can also call task using .task {} instead of Task.
  */
@@ -70,6 +75,7 @@ struct TasksInDepth: View {
                     .frame(width: 200, height: 200)
             }
         }.onAppear { // Tasks have multiple different priority options and they depend on order:
+            // we could use .task {} also.
             Task(priority: .low) {
                 try? await Task.sleep(nanoseconds: 1_000_000_000) // just a sleep example
                 print("Low: \(Thread.current) : \(Task.currentPriority)")
